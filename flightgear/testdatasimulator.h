@@ -24,7 +24,7 @@ class DataSimulator
    string key[GENERIC_SMALL] = {"/instrumentation/airspeed-indicator/indicated-speed-kt",
                                 "/sim/time/warp",
                                 "/controls/switches/magnetos",
-                                "/instrumentation/heading-indicator/offset-deg",
+                                "/instrumentation/heading-indicator/indicated-heading-deg",
                                 "/instrumentation/altimeter/indicated-altitude-ft",
                                 "/instrumentation/altimeter/pressure-alt-ft",
                                 "/instrumentation/attitude-indicator/indicated-pitch-deg",

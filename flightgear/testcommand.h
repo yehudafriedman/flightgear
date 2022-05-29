@@ -17,11 +17,7 @@ class Command
         virtual void doCommand(vector<string> data)= 0;
         string search_key(string key);
         string number_value(string str);
-        vector<string> expretion(vector<string> exp);
-        int precedence(char op);
-        int applyOp(int a, int b, char op);
-        int evaluate(string tokens);
-        
+        vector<string> expretion(vector<string> exp);        
 };
 
 
@@ -78,12 +74,11 @@ class IfCommand:public Command
         int operator_division(int a, int b);
         int calculate_operator(int a, int b, string _operator);
 
-
         bool if_expretion_true;
 
 
 };
 
 
-string search_key(string key);
+// string search_key(string key);
 

@@ -12,7 +12,7 @@ var primer = bind /controls/engines/engine/primer
 var starter = bind /controls/switches/starter
 var autostart = bind /engines/active-engine/auto-start
 var breaks = bind /controls/flight/speedbrake
-var heading = bind /instrumentation/heading-indicator/offset-deg
+var heading = bind /instrumentation/heading-indicator/indicated-heading-deg
 var airspeed = bind /instrumentation/airspeed-indicator/indicated-speed-kt
 var roll = bind /instrumentation/attitude-indicator/indicated-roll-deg
 var pitch = bind /instrumentation/attitude-indicator/internal-pitch-deg
@@ -45,7 +45,9 @@ while alt < 1000
 {
 print alt
 rudder = ( h0 - heading ) / 80
-aileron = ( 0 - roll ) / 70
+print heading
+print alt
+aileron = - roll / 70
 elevator = pitch / 50
 blc = 1
 sleep 50
