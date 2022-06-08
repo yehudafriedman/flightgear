@@ -73,7 +73,5 @@ class DataSimulator
         static DataSimulator* getInstance(int port, int samples_seccend);
         thread t1;
         mutex m;
-        
-
 
 };

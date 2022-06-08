@@ -5,7 +5,7 @@
 #include "lexer.h"
 //#include "parser.h"
 #include "testparser.h"
-#include "testcommand.h"
+// #include "testcommand.h"
 // #include "testcommand.h"
 
 
@@ -29,7 +29,7 @@ int main()
 
 	Parser* parser = new Parser("file.txt");
 	// parser->get_all_lines("file.txt");
-	parser->do_parser(parser->all_lines);
+	parser->do_parser(&parser->all_lines);
 	//parser->aaaa();
 
 

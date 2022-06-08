@@ -1,5 +1,4 @@
 #include "testdatasimulator.h"
-// #include <thread>
 using namespace std;
 
 
@@ -32,8 +31,6 @@ void DataSimulator::initInSimulatorTable()
      {
          simulator_table[key[i]]="0";
      }
-    //  for (auto x : simulator_table)
-    //   cout << x.first << " " << x.second << endl;
       
 }
 

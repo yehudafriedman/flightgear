@@ -52,16 +52,7 @@ void Lexer::SplitString(string data)
 
 	v1.push_back(temp);
     Data.push_back(v1);
-        // for (int i = 0; i < Data.size() ; i++) 
-        // {
-        //     cout<<"i=="<<i<<endl;
-        //     for (int j = 0; j < Data[i].size(); j++)
-        //     {
-        //         cout <<Data[i][j] << " ";
-        //     }
-        //     cout << endl;
 
-        // }	
 }
 
 vector<vector<string>> Lexer::getAllLines()
@@ -70,15 +61,6 @@ vector<vector<string>> Lexer::getAllLines()
     return Data;
 }
 
-vector<string> Lexer::getLine(int line)
-{
-    
-    // for(int i=0;i<Data[line].size();i++){
-    //     cout<<Data[line][i];
-    // }
-    
-    return Data[line];
-}
 
 
 

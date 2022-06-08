@@ -8,7 +8,6 @@ Server::Server(int port, int samples_second)
 {
 	this->samples_second = samples_second;
 	this->port = port;
-	// cout << port << " = port" << endl;
 }
 
 void Server::connecting()
@@ -37,10 +36,6 @@ void Server::connecting()
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY; 
 	address.sin_port = htons(port);		 
-	// cout << "server_fd=" << server_fd << endl;
-	// cout << "sin_family=" << address.sin_family << endl;
-	// cout << "sin_addr=" << address.sin_addr.s_addr << endl;
-	// cout << "sin_port=" << address.sin_port << endl;
 
 	// Forcefully attaching socket to the port 8080
 	if (bind(server_fd, (struct sockaddr *)&address,

@@ -1,5 +1,15 @@
 #include "calculator.h"
 
+Calculator* Calculator::calculator = NULL;
+Calculator* Calculator::GetInstance()
+{
+    if(calculator == NULL)
+    {
+        calculator = new Calculator();
+    }
+    return calculator;
+}
+
 void Calculator::calculate(vector<string>exp)
 {
     
@@ -89,10 +99,6 @@ bool Calculator::is_unary(int i)
     return false;
 }
 
-bool Calculator::is_operator(string op)
-{
-    return op =="+"|| op=="-"|| op=="*" || op=="/";
-}
 
 double Calculator::applyOp(double a, double b, string op)
 {
@@ -104,23 +110,31 @@ double Calculator::applyOp(double a, double b, string op)
         case '*': return a * b;
         case '/': return a / b;
     }
+    return 0;
 }
+
 string Calculator::solver()
 {
- stack<string> _operator;
+    stack<string> _operator;
     stack<string> _operand;
     
     
     while (!fix.empty())
     {
-        if (is_operator(fix.top()))
+        if (! precedence(fix.front()))
         {
-            _operator.push(fix.top());
+            _operand.push(fix.front());
             fix.pop();
         }
         else
         {
-            _operand.push(fix.top());
+            string op = fix.front();
+            double a = stod(_operand.top());
+            _operand.pop();
+            double b = stod(_operand.top());
+            _operand.pop();
+           double x = applyOp(b,a,op);
+         _operand.push(to_string(x));
             fix.pop();
         }
     }
@@ -141,4 +155,6 @@ string Calculator::solver()
     
     return _operand.top();
 }
+
+
 

@@ -29,7 +29,5 @@ class Server
         int size_buff;
 	    void connecting();
 	    void reader();
-        queue<string> fiilQueueVal();
-        queue<string> q;
 
 };
